@@ -5,9 +5,11 @@ services:
     build: .
     image: jeu-2d:latest
     volumes:
-      - .:/jeu-2d  # Monte le répertoire actuel dans le conteneur
+      - .:/app  # Monte le répertoire actuel dans le conteneur
       - /tmp/.X11-unix:/tmp/.X11-unix  # Pour les applications graphiques
     environment:
       - DISPLAY=${DISPLAY}  # Utilise l'affichage actuel
     stdin_open: true  # Permet l'accès à l'entrée standard
     tty: true         # Permet à l'application de fonctionner dans un terminal
+    ports:
+      - "5003:5000"    # Mappe le port 5000 du conteneur au port 5000 de l'hôte

@@ -11,8 +11,13 @@ RUN apt-get update
 COPY requirements.txt /jeu-2d
 RUN pip install --upgrade pip -r requirements.txt
 
+# Exposer le port pour Flask
+EXPOSE 5003
+
+
 # Copier le code du jeu dans le conteneur
 COPY . /jeu-2d
+COPY . /app.py
 
 # Commande par défaut pour exécuter le jeu
-CMD ["python", "jeu-2d.py"]
+CMD ["python", "app.py"]
