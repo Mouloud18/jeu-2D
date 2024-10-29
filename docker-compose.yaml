@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  jeu:
+    build: .
+    image: jeu-2d:latest
+    volumes:
+      - .:/jeu-2d  # Monte le répertoire actuel dans le conteneur
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Pour les applications graphiques
+    environment:
+      - DISPLAY=${DISPLAY}  # Utilise l'affichage actuel
+    stdin_open: true  # Permet l'accès à l'entrée standard
+    tty: true         # Permet à l'application de fonctionner dans un terminal
