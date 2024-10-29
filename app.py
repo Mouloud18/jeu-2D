@@ -31,6 +31,9 @@ import time
 
 app = Flask(__name__)
 
+# Chemin vers le fichier du jeu
+GAME_FILE = 'jeu-2d.py'
+
 # Initialiser Pygame
 def run_game():
     # Initialiser Pygame
