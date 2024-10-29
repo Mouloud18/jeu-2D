@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Chemin vers le fichier du jeu
-GAME_FILE = 'jeu2d.py'
+GAME_FILE = 'jeu-2d.py'
 
 @app.route('/')
 def home():
