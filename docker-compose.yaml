@@ -14,4 +14,4 @@ services:
     tty: true         # Permet à l'application de fonctionner dans un terminal
     ports:
       - "5003:5000"    # Mappe le port 5000 du conteneur au port 5000 de l'hôte
-      - "5900:5900"  # Port VNC
+      - "5900:5900"    # Port VNC

@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apt-get update 
 
 # Copier le fichier requirements.txt et installer les dépendances
-COPY requirements.txt /jeu-2d
+COPY requirements.txt .
 RUN pip install --upgrade pip -r requirements.txt
 
 # Exposer le port pour Flask
