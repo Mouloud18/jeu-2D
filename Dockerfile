@@ -2,7 +2,7 @@
 FROM python:3.10-slim
 
 # Définir le répertoire de travail
-WORKDIR /jeu-2d
+WORKDIR /app
 
 # Installer les dépendances nécessaires
 RUN apt-get update 
@@ -19,5 +19,12 @@ EXPOSE 5003
 COPY . /jeu-2d
 COPY . /app.py
 
+# Configurer le serveur VNC
+ENV DISPLAY=:99
+RUN Xvfb :99 -screen 0 800x600x16 &
+
+# Exécuter l'application avec VNC
+CMD x11vnc -display :99 -forever & python app.py
+
 # Commande par défaut pour exécuter le jeu
-CMD ["python", "app.py"]
+# CMD ["python", "app.py"]

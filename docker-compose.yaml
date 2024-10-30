@@ -9,7 +9,9 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix  # Pour les applications graphiques
     environment:
       - DISPLAY=${DISPLAY}  # Utilise l'affichage actuel
+      - DISPLAY=:99
     stdin_open: true  # Permet l'accès à l'entrée standard
     tty: true         # Permet à l'application de fonctionner dans un terminal
     ports:
       - "5003:5000"    # Mappe le port 5000 du conteneur au port 5000 de l'hôte
+      - "5900:5900"  # Port VNC
